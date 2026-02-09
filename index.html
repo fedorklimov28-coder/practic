@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Работа с консолью и диалоговыми окнами</title>
+</head>
+<body>
+    <h1>Демонстрация работы с консолью и диалоговыми окнами</h1>
+    
+    <script>
+        // Работа с консолью
+        console.log("Привет, это сообщение в консоли!");
+
+        // Работа с alert
+        let greeting = "Добро пожаловать на страницу!";
+        alert(greeting);
+
+        // Работа с prompt
+        let userName = prompt("Пожалуйста, введите ваше имя:");
+        if (userName) {
+            alert("Здравствуйте, " + userName + "!");
+        }
+
+        // Работа с confirm
+        let isReady = confirm("Готовы продолжить работу с страницей?");
+        if (isReady) {
+            alert("Отлично, продолжаем!");
+        } else {
+            alert("Понимаем, вернетесь позже!");
+        }
+    </script>
+</body>
+</html>
