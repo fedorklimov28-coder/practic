@@ -1,0 +1,22 @@
+/* Внешняя таблица стилей */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+h1 {
+    color: #333;
+}
+
+/* Импорт другого CSS-файла (пример) */
+@import url('additional-styles.css');
