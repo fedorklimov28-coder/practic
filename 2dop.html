@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Смена фона без JavaScript</title>
+
+<style>
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Скрываем checkbox */
+#toggle {
+    display: none;
+}
+
+/* Основной контейнер */
+.page {
+    min-height: 100vh;
+    background: white;
+    padding: 30px;
+    transition: background 0.4s;
+}
+
+/* Когда checkbox включён — меняем фон */
+#toggle:checked + .page {
+    background: lightblue;
+}
+
+/* Кнопка */
+label {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #0066cc;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+label:hover {
+    background: #004999;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Переключатель -->
+<input type="checkbox" id="toggle">
+
+<!-- Весь сайт внутри контейнера -->
+<div class="page">
+
+    <label for="toggle">Изменить фон</label>
+
+    <h1>CSS без JavaScript</h1>
+
+    <p>
+        Нажми на кнопку — фон изменится и сохранится.
+    </p>
+
+    <p>
+        Всё работает только на HTML + CSS.
+    </p>
+
+</div>
+
+</body>
+</html>
