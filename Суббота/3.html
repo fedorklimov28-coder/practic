@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Центр подготовки: Миссия Марс</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e293b;
+            --accent-color: #f59e0b;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--secondary-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--secondary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+            border-bottom: 3px solid var(--primary-color);
+            display: inline-block;
+            width: 100%;
+        }
+
+        form {
+            background: var(--card-bg);
+            padding: 25px;
+            margin-bottom: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+        }
+
+        legend {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: var(--primary-color);
+            padding: 0 10px;
+        }
+
+        fieldset {
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        input[type="password"],
+        input[type="url"],
+        input[type="date"],
+        input[type="time"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+
+        input[type="range"] {
+            width: 100%;
+        }
+
+        .radio-group, .checkbox-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+Markup
+
+
+            background: #f1f5f9;
+            padding: 10px;
+            border-radius: 6px;
+        }
+
+        .radio-group input, .checkbox-group input {
+            width: auto;
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background 0.3s;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #1d4ed8;
+        }
+
+        .hint {
+            font-size: 0.85em;
+            color: #64748b;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Программа колонизации «MARS-2026»</h1>
+
+    <!-- ФОРМА 1: ЗАЯВКА -->
+    <form action="#">
+        <fieldset>
+            <legend>1. Заявка на участие в полете</legend>
+            
+            <div class="form-group">
+                <label for="full-name">ФИО кандидата:</label>
+                <input type="text" id="full-name" name="full-name" placeholder="Иванов Иван Иванович" required> <!-- Тип 1: text -->
+            </div>
+
+            <div class="form-group">
+                <label for="user-tel">Контактный телефон:</label>
+                <input type="tel" id="user-tel" name="user-tel" placeholder="+7 (999) 000-00-00"> <!-- Тип 2: tel -->
+            </div>
+
+            <div class="form-group">
+                <label for="mission-date">Предпочтительная дата вылета:</label>
+                <input type="date" id="mission-date" name="mission-date" min="2026-01-01"> <!-- Тип 3: date -->
+            </div>
+
+            <div class="form-group">
+                <label for="sector">Выбор сектора посадки:</label>
+                <select id="sector" name="sector"> <!-- Тип 4: select -->
+                    <option value="crater">Кратер Езеро</option>
+                    <option value="plain">Равнина Утопия</option>
+                    <option value="mountains">Гора Олимп</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="checkbox-group">
+                    <input type="checkbox" name="terms" required> Я согласен на криозаморозку во время полета <!-- Тип 5: checkbox -->
+                </label>
+            </div>
+
+            <button type="submit">Отправить заявку</button>
+        </fieldset>
+    </form>
+
+    <!-- ФОРМА 2: АНКЕТА -->
+    <form action="#">
+        <fieldset>
+            <legend>2. Психологическая анкета</legend>
+
+            <div class="form-group">
+                <label>Ваша основная специализация:</label>
+                <div class="radio-group"> <!-- Тип 6: radio -->
+                    <input type="radio" id="eng" name="spec" value="engineer"> <label for="eng">Инженер</label>
+                    <input type="radio" id="bio" name="spec" value="biologist"> <label for="bio">Биолог</label>
+                    <input type="radio" id="pilot" name="spec" value="pilot"> <label for="pilot">Пилот</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="exp">Стаж работы в экстремальных условиях (лет):</label>
+                <input type="number" id="exp" name="exp" min="0" max="50" value="5"> <!-- Тип 7: number -->
+            </div>
+
+            <div class="form-group">
+                <label for="stress">Уровень стрессоустойчивости (0-100):</label>
+                <input type="range" id="stress" name="stress" min="0" max="100"> <!-- Тип 8: range -->
+            </div>
+
+            <div class="form-group">
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Центр подготовки: Миссия Марс</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e293b;
+            --accent-color: #f59e0b;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--secondary-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--secondary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+            border-bottom: 3px solid var(--primary-color);
+            display: inline-block;
+            width: 100%;
+        }
+
+        form {
+            background: var(--card-bg);
+            padding: 25px;
+            margin-bottom: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+        }
+
+        legend {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: var(--primary-color);
+            padding: 0 10px;
+        }
+
+        fieldset {
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        input[type="password"],
+        input[type="url"],
+        input[type="date"],
+        input[type="time"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+
+        input[type="range"] {
+            width: 100%;
+        }
+
+        .radio-group, .checkbox-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+
+<label for="file-upload">Загрузите медицинский сертификат (PDF):</label>
+                <input type="file" id="file-upload" name="medical-doc" accept=".pdf"> <!-- Тип 9: file -->
+            </div>
+
+            <div class="form-group">
+                <label for="motivation">Почему вы хотите покинуть Землю?</label>
+                <textarea id="motivation" name="motivation" rows="4" placeholder="Опишите ваши цели..."></textarea> <!-- Тип 10: textarea -->
+            </div>
+
+            <button type="submit" style="background-color: var(--accent-color);">Сохранить анкету</button>
+        </fieldset>
+    </form>
+
+    <!-- ФОРМА 3: РЕГИСТРАЦИЯ -->
+    <form action="#">
+        <fieldset>
+            <legend>3. Регистрация в системе управления</legend>
+
+            <div class="form-group">
+                <label for="email">Электронная почта (логин):</label>
+                <input type="email" id="email" name="email" placeholder="astronaut@space.com" required> <!-- Тип 11: email -->
+            </div>
+
+            <div class="form-group">
+                <label for="pass">Придумайте секретный код:</label>
+                <input type="password" id="pass" name="pass" required> <!-- Тип 12: password -->
+            </div>
+
+            <div class="form-group">
+                <label for="portfolio">Ссылка на видеовизитку:</label>
+                <input type="url" id="portfolio" name="portfolio" placeholder="https://youtube.com/..."> <!-- Тип 13: url -->
+            </div>
+
+            <div class="form-group">
+                <label for="color-id">Цвет вашего идентификационного браслета:</label>
+                <input type="color" id="color-id" name="color-id" value="#2563eb"> <!-- Тип 14: color -->
+            </div>
+
+            <div class="form-group">
+                <label for="sync-time">Удобное время для сеанса связи (МСК):</label>
+                <input type="time" id="sync-time" name="sync-time" value="12:00"> <!-- Тип 15: time -->
+            </div>
+
+            <button type="submit">Создать аккаунт колониста</button>
+        </fieldset>
+    </form>
+</div>
+
+</body>
+</html>

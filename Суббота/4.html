@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Демонстрация таблиц и списков</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+
+        /* 1. Стили для большой таблицы */
+        .table-container {
+            overflow-x: auto;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+        }
+
+        table th, table td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        table thead {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        table tr:hover {
+            background-color: #f1f1f1;
+            transition: 0.3s;
+        }
+
+        /* 2. Стили для details и списка */
+        details {
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        details summary {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        details ol {
+            margin-top: 15px;
+            padding-left: 25px;
+        }
+
+        /* 3. Стили для вложенных списков */
+        .nested-lists-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #3498db;
+        }
+
+        dl {
+            margin-top: 10px;
+            padding: 10px;
+            background: #eef7fd;
+            border-radius: 5px;
+        }
+
+        dt {
+            font-weight: bold;
+            color: #2980b9;
+        }
+
+        dd {
+            margin-bottom: 5px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Практическая работа: Таблицы и списки</h1>
+
+    <!-- 1. Большая таблица -->
+    <h2>1. Большая таблица данных</h2>
+    <div class="table-container">
+        <table>
+            <thead>
+			                <tr>
+                    <th>№</th>
+                    <th>Наименование товара</th>
+                    <th>Категория</th>
+                    <th>Количество на складе</th>
+                    <th>Цена за ед. (руб.)</th>
+                    <th>Статус</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Ноутбук Pro Max 15</td>
+                    <td>Электроника</td>
+                    <td>24</td>
+                    <td>125 000</td>
+                    <td>В наличии</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Клавиатура механическая</td>
+                    <td>Периферия</td>
+                    <td>150</td>
+                    <td>8 500</td>
+                    <td>В наличии</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Монитор 4K Ultra Slim</td>
+                    <td>Электроника</td>
+                    <td>5</td>
+                    <td>45 000</td>
+                    <td>Мало</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Мышь беспроводная</td>
+                    <td>Периферия</td>
+                    <td>0</td>
+                    <td>3 200</td>
+                    <td>Ожидается</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Кресло эргономичное</td>
+                    <td>Мебель</td>
+                    <td>12</td>
+                    <td>21 000</td>
+                    <td>В наличии</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Стол с регулировкой высоты</td>
+                    <td>Мебель</td>
+                    <td>3</td>
+                    <td>35 000</td>
+                    <td>Мало</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 2. Нумерованный список с применением details -->
+    <h2>2. Раскрывающийся нумерованный список</h2>
+    <details>
+        <summary>Нажмите, чтобы увидеть инструкции по эксплуатации</summary>
+        <ol>
+            <li>Распакуйте устройство и проверьте комплектацию.</li>
+            <li>Подключите кабель питания к сети 220V.</li>
+            <li>Нажмите кнопку включения на боковой панели.</li>
+            <li>Следуйте инструкциям мастера настройки на экране.</li>
+            <li>Зарегистрируйте продукт в личном кабинете для получения гарантии.</li>
+        </ol>
+    </details>
+
+    <!-- 3. Вложенный список (ul, ol, dl) -->
+    <h2>3. Вложенный список (3 вида списков)</h2>
+    <div class="nested-lists-container">
+        <ul>
+            <li><strong>Продуктовые группы (Маркированный список)</strong>
+                <ol>
+                    <li>Фрукты и овощи (Порядковый список внутри маркированного)
+                        <dl>
+                            <!-- Список определений внутри порядкового -->
+                            <dt>Яблоко</dt>
+                            <dd>Плод яблони, который употребляется в пищу в свежем виде.</dd>
+                            <dt>Помидор</dt>
+                            <dd>Растение семейства Пасленовые, технически является ягодой.</dd>
+                        </dl>
+                    </li>
+                    <li>Молочные продукты
+                        <ol>
+                            <li>Молоко</li>
+                            <li>Кефир</li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+            <li><strong>Хозяйственные товары</strong>
+                <ul>
+                    <li>Мыло</li>
+                    <li>Чистящее средство</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</body>
+</html>
+                    

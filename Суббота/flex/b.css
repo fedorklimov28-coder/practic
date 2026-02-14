@@ -1,0 +1,59 @@
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+/* Верх */
+.top {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.top div {
+  flex: 1;
+  border: 1px solid black;
+  padding: 20px;
+}
+
+/* Контент */
+.content {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.menu {
+  width: 20%;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.main {
+  width: 80%;
+  border: 1px solid black;
+  padding: 20px;
+}
+
+/* Профиль */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+/* Footer */
+.footer {
+  border: 1px solid black;
+  padding: 20px;
+}
